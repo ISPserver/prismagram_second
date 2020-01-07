@@ -1,0 +1,23 @@
+{
+  "name": "prismagram_second",
+  "version": "1.0.0",
+  "description": "Instagram clone with Express + Prisma + React and React Native // Second challenge",
+  "main": "index.js",
+  "repository": "https://github.com/ISPserver/prismagram_second.git",
+  "author": "ISPserver <tjdals080@naver.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@babel/core": "^7.7.7",
+    "@babel/node": "^7.7.7",
+    "@babel/preset-env": "^7.7.7",
+    "babel-node": "^0.0.1-security",
+    "dotenv": "^8.2.0",
+    "graphql-yoga": "^1.18.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  },
+  "scripts": {
+    "dev": "nodemon --exec babel-node src/server.js"
+  }
+}
