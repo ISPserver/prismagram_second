@@ -5,8 +5,8 @@ Instagram clone with Express + Prisma + React and React Native // Second challen
 ## User Stories
 //Resolvers
 -[✔️] Create account
--[ ] Request Secret
--[ ] Confirm Secret (Log in)
+-[✔️] Request Secret
+-[✔️] Confirm Secret (Log in)
 -[ ] Like / Unlike a photo
 -[ ] Comment on a photo
 -[ ] Search by user 

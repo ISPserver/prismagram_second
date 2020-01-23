@@ -7,7 +7,6 @@ import logger from "morgan";
 import schema from "./schema";
 import { sendSecretMail } from "./utils";
 
-sendSecretMail("tjdals080@naver.com","123");
 const PORT = process.env.PORT || 4000;
 
 const server = new GraphQLServer({ schema });
