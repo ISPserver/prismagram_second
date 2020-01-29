@@ -5,7 +5,6 @@ dotenv.config({path: path.resolve(__dirname, ".env") });
 import { adjectives, nouns } from "./words";
 import nodemailer from "nodemailer";    //sendgrid Import
 import sgTransport from "nodemailer-sendgrid-transport"; //sendgrid Import
-
 export const generateSecret = () => {
     const randomNumber = Math.floor(Math.random() * adjectives.length);
     return `${adjectives[randomNumber]} ${nouns[randomNumber]}`;
@@ -31,4 +30,7 @@ export const sendSecretMail = (address, secret) => {
         html: `Hello! Your login secret is <strong>${secret}</strong>.<br/>Copy paste on the app/website to log in `
     }
     return sendMail(email);
-}
+};
+
+export const generateToken = id => jwt.sign({ id }, process.env.JWT_SECRET);
+
