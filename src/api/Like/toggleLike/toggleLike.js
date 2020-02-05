@@ -10,23 +10,27 @@ export default {
             isAuthenticated(request);
             const { postId } = args;
             const { user } = request;
+            const filterOptions ={
+                AND: [
+                    {
+                        user: {
+                            id: user.id
+                        }
+                    },
+                    {
+                        post: {
+                            id: postId
+                        }
+                    }
+                ]  
+            };            
                 try{
-                    const existingLike = await prisma.$exists.like({
-                        AND: [
-                            {
-                                user: {
-                                    id: user.id
-                                }
-                            },
-                            {
-                                post: {
-                                    id: postId
-                                }
-                            }
-                        ]  
-                    });
+                    //생성,삭제 2개 다 : filterOptions 사용
+                    //like를 얻는 것과 like를 지우는 것 둘다 같은것이다.
+                    //즉 mutation 하면 like 생성, 한번 더 누르면 like삭제
+                    const existingLike = await prisma.$exists.like(filterOptions);
                     if(existingLike){
-                        // TO DO                
+                        await prisma.deleteManyLikes(filterOptions);         
                     }else {
                         await prisma.createLike({
                             user: {
