@@ -22,7 +22,7 @@ type Post {
   user: User!
   files: [File!]!
   likes: [Like!]!
-  Comments: [Comment!]!
+  comments: [Comment!]!
 }
 
 type Like {

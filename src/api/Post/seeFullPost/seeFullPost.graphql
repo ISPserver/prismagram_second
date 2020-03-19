@@ -7,3 +7,4 @@ type FullPost {
 type Query {
     seeFullPost(id: String!): FullPost!
 }
+
