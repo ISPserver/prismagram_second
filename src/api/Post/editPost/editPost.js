@@ -3,7 +3,8 @@ import { prisma } from "../../../../generated/prisma-client";
 const DELETE = "DELETE";
 const EDIT = "EDIT";
 export default {
-    Mutation:{
+    Mutation:{  //Query gets data from the DB, mutation changes the DB
+
         editPost: async(_, args, {request, isAuthenticated}) => {
             isAuthenticated(request);
             const{ id, caption, location, action } = args;
